@@ -2,12 +2,15 @@
 exports.__esModule = true;
 exports.Playground = void 0;
 var Playground = /** @class */ (function () {
-    function Playground(width, heigth) {
+    function Playground(width, height) {
         this.width = width;
-        this.heigth = heigth;
+        this.height = height;
     }
-    Playground.prototype.getPlaygroundSize = function () {
-        return [this.width, this.heigth];
+    Playground.prototype.getPlaygroundWidth = function () {
+        return this.width;
+    };
+    Playground.prototype.getPlaygroundHeight = function () {
+        return this.height;
     };
     return Playground;
 }());

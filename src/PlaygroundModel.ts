@@ -2,14 +2,18 @@ import { getRandomInRange } from "./utils"
 
 export class Playground {
     private width: number
-    private heigth: number
+    private height: number
 
-    constructor(width: number, heigth: number){
+    constructor(width: number, height: number){
         this.width = width
-        this.heigth = heigth
+        this.height = height
     }
 
-    getPlaygroundSize() {
-        return [this.width, this.heigth]
+    getPlaygroundWidth() {
+        return this.width
+    }
+
+    getPlaygroundHeight() {
+        return this.height
     }
 }

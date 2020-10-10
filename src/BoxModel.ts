@@ -1,26 +1,44 @@
 import {getRandomInRange} from "./utils"
 import {Playground} from "./PlaygroundModel"
 
-class Box {
+export class Box {
     private boxCoordinates: Array<number>
-    private boxLength: number
+    private boxHeigth: number
+    private boxWidth: number = 1
 
-    private InitBoxCoordinations(Playground) {
-        const xPoint = getRandomInRange(0, Playground.getPlaygroundSize()[0])
-        const yPoint = getRandomInRange(0, Playground.getPlaygroundSize()[1])
+    constructor() {
+        this.initBoxCoordinations
+        this.initBoxHeigth
+        // this.initBoxWidth
+    }
+
+    private initBoxCoordinations(Playground) {
+        const playgroundHeigth: number = Playground.getPlaygroundHeight()
+        const playgroundWidth: number = Playground.getPlaygroundWidth()
+        const xPoint = getRandomInRange(0, playgroundHeigth)
+        const yPoint = getRandomInRange(0, playgroundWidth)
         this.boxCoordinates.push(xPoint, yPoint)
     }
 
-    private initBoxLength() {
-        const boxLength = getRandomInRange(0, 5)
-        this.boxLength = boxLength
+    private initBoxHeigth() {
+        const boxHeigth = getRandomInRange(0, 5)
+        this.boxHeigth = boxHeigth
     }
+
+    // private initBoxWidth() {
+    //     const boxWidth = getRandomInRange(0, 5)
+    //     this.boxWidth = boxWidth
+    // }
 
     getBoxCoorditanes() {
         return this.boxCoordinates
     }
 
-    getBoxLength() {
-        return this.boxLength
+    getBoxHeigth() {
+        return this.boxHeigth
     }
+
+    // getBoxWidth() {
+    //     return this.boxWidth
+    // }
 }
